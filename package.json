@@ -104,6 +104,7 @@
     "bundle": "babel-node tools/run bundle",
     "build": "babel-node tools/run build",
     "deploy": "babel-node tools/run deploy",
-    "start": "babel-node tools/run start"
+    "start": "babel-node tools/run start",
+    "startRelease": "babel-node tools/run start --release"
   }
 }
