@@ -10,7 +10,7 @@
 @import '../../styles/app';
 
 .root {
-
+	
 }
 
 .container {
@@ -23,3 +23,60 @@
 	padding-left:10px;
 	padding-right:10px;
 }
+
+.jobtitle h5:before {
+		color: #6ecf26;
+		content: "\f058";
+		font-family: "FontAwesome";
+		font-weight: normal;
+		margin-right: 7px;
+}
+
+.jobtitle p {
+			padding-left: 20px;
+			position: relative;
+}
+	.jobtitle p:before {
+				color: #14b1bb;
+				content: "\f1ad";
+				font-family: "FontAwesome";
+				left: 0;
+				position: absolute;
+				top: 0;
+			}
+.joblocation {
+		padding-left: 30px;
+		position: relative;
+	}
+	.joblocation:before{
+			color: #14b1bb;
+			content: "\f041";
+			font-family: "FontAwesome";
+			left: 15px;
+			position: absolute;
+			top: 0;
+		}
+
+.fulltime {
+	background: #6ecf26;
+}
+
+.badge.fulltime {
+		background: #6ecf26;
+	}
+
+	.badge.parttime {
+		background: #ff6c00;
+	}
+
+	.badge.freelance {
+		background: #72d2ff;
+	}
+
+	.badge.temporary {
+		background: #c20000;
+	}
+
+	.badge.internship {
+		background: #0064c2;
+	}

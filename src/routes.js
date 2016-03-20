@@ -17,6 +17,7 @@ import LoginPage from './components/LoginPage';
 import RegisterPage from './components/RegisterPage';
 import NotFoundPage from './components/NotFoundPage';
 import JobList from './components/JobList';
+import JobDetail from './components/JobDetail';
 
 async function getContextComponent(location, callback) {
   const query = '/graphql?' +
@@ -40,7 +41,7 @@ export default (
     <Route path="/job" component={App}>
       <IndexRoute getComponent={getContextComponent} />
       <Route path="list" component={JobList} />
-      <Route path="login" component={LoginPage} />
+      <Route path="detail" component={JobDetail} />
       <Route path="register" component={RegisterPage} />
       <Route path="about" getComponent={getContextComponent} />
       <Route path="privacy" getComponent={getContextComponent} />

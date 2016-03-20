@@ -36,7 +36,7 @@ const GLOBALS = {
 
 const config = {
   output: {
-    publicPath: DEBUG ? '/' : 'http://example.com/',
+    publicPath: DEBUG ? 'http://192.168.8.7:3001/' : 'http://192.168.8.7:3001/',
     sourcePrefix: '  ',
   },
 

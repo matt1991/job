@@ -12,6 +12,9 @@ import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './JobList.scss';
 import cx from 'classnames';
 
+import { Link } from 'react-router';
+
+
 
 class JobItem extends Component {
 
@@ -25,9 +28,21 @@ class JobItem extends Component {
 
   render() {
     return (
-      <a className="list-group-item">
-        {this.state.job.name}
-      </a>
+      <Link className="list-group-item" to="/job/detail">
+        <div className="row">
+          <div className={cx("col-xs-4", s.jobtitle)}>
+            <p><strong>{this.state.job.name}</strong></p>
+            <p>{this.state.job.company}</p>
+          </div>
+          <div className={cx("col-xs-4", s.joblocation)}>
+            <p><strong>{this.state.job.place}</strong></p>
+          </div>
+          <div className={cx("col-xs-4", "text-center", )}>
+            <p ><strong>{this.state.job.salary}</strong></p>
+            <p className={cx("badge",s.fulltime)}>{this.state.job.type}</p>
+          </div>
+        </div>
+      </Link>
     );
   }
 

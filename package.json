@@ -86,6 +86,13 @@
     "webpack-hot-middleware": "^2.8.1",
     "webpack-middleware": "^1.4.0"
   },
+  "babel": {
+    "presets": [
+      "react",
+      "es2015",
+      "stage-0"
+    ]
+  },
   "jest": {
     "rootDir": "./src",
     "scriptPreprocessor": "../preprocessor.js",
@@ -105,6 +112,6 @@
     "build": "babel-node tools/run build",
     "deploy": "babel-node tools/run deploy",
     "start": "babel-node tools/run start",
-    "startRelease": "babel-node tools/run start --release"
+    "restart": "babel-node tools/run start --release"
   }
 }

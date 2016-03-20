@@ -23,8 +23,8 @@ class Navigation extends Component {
     return (
       <div className={cx(s.root, this.props.className)} role="navigation">
         
-        <span className={cx(s.search, "glyph glyphicon glyphicon-search")} aria-hidden="true"></span>
-        <Link className={s.link} to="/about">About</Link>
+        <span className={cx(s.search, "glyph glyphicon glyphicon-search pull-right")} aria-hidden="true"></span>
+        
 
       </div>
     );

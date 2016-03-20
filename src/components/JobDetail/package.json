@@ -1,0 +1,6 @@
+{
+  "name": "JobDetail",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./JobDetail.js"
+}

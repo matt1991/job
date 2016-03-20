@@ -68,7 +68,6 @@ server.get('/login/facebook/return',
     res.redirect('/');
   }
 );
-
 //
 // Register API middleware
 // -----------------------------------------------------------------------------
