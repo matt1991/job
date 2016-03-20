@@ -44,7 +44,7 @@ class JobList extends Component {
       } else if (i%3 == 0) {
         job = {name: "iOS Developer", place: "Tsim Sha Tsui", company:"Google",salary:"$5000", type:"full-time"};
       } else {
-        job = {name: "Android Developer", place: "CoswayBay", company:"Facebook",salary:"$5000", type:"full-time"};
+        job = {name: "Android Developer", place: "Causeway", company:"Facebook",salary:"$5000", type:"full-time"};
       }
 
       this.state.jobList.push(job);

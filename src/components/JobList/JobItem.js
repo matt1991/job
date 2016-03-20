@@ -30,14 +30,14 @@ class JobItem extends Component {
     return (
       <Link className="list-group-item" to="/job/detail">
         <div className="row">
-          <div className={cx("col-xs-4", s.jobtitle)}>
-            <p><strong>{this.state.job.name}</strong></p>
-            <p>{this.state.job.company}</p>
+          <div className={cx("col-xs-3", s.jobtitle)}>
+            <strong>{this.state.job.name}</strong><br/>
+            {this.state.job.company}
           </div>
-          <div className={cx("col-xs-4", s.joblocation)}>
-            <p><strong>{this.state.job.place}</strong></p>
+          <div className={cx("col-xs-6 text-center", s.joblocation)}>
+            <i className={cx("glyphicon glyphicon-home", s.homeicon)}></i><strong>{this.state.job.place}</strong>
           </div>
-          <div className={cx("col-xs-4", "text-center", )}>
+          <div className={cx("col-xs-3", "text-center", )}>
             <p ><strong>{this.state.job.salary}</strong></p>
             <p className={cx("badge",s.fulltime)}>{this.state.job.type}</p>
           </div>

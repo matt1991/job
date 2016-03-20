@@ -19,14 +19,19 @@ class Navigation extends Component {
     className: PropTypes.string,
   };
 
+  constructor(props) {
+    super();
+  }
+
   render() {
     return (
       <div className={cx(s.root, this.props.className)} role="navigation">
-        
-        <span className={cx(s.search, "glyph glyphicon glyphicon-search pull-right")} aria-hidden="true"></span>
-        
-
+        <span className={cx(s.search, "glyph glyphicon glyphicon-search pull-right")} 
+        aria-hidden="true" 
+        onClick={this.props.onSearchButtonPressed}
+        ></span>
       </div>
+
     );
   }
 

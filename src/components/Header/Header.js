@@ -15,16 +15,34 @@ import Navigation from '../Navigation';
 
 class Header extends Component {
 
+  constructor(props) {
+    super();
+    this.state = {
+      search:false
+    };
+  }
+
+  onSearchButtonPressed() {
+    this.setState({
+      ...this.state,
+      search:!this.state.search
+    });
+    console.log("onSearchButtonPressed");
+  }
+
   render() {
     return (
       <div className={s.root}>
         <div className={s.container}>
-          <Navigation className={s.nav} />
+          <Navigation className={s.nav}  onSearchButtonPressed={::this.onSearchButtonPressed}/>
+
           <IndexLink className={s.brand} to="/">
             <img src={require('./logo-small.png')} width="38" height="38" alt="React" />
             <span className={s.brandTxt}>帮帮推</span>
           </IndexLink>
-
+        </div>
+        <div className>
+          <input type="text" className={this.state.search?s.searchshow:s.searchhide} placeholder="Search"></input>
         </div>
       </div>
     );
