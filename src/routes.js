@@ -41,7 +41,7 @@ export default (
     <Route path="/job" component={App}>
       <IndexRoute getComponent={getContextComponent} />
       <Route path="list" component={JobList} />
-      <Route path="detail" component={JobDetail} />
+      <Route path="detail/:jobId" component={JobDetail} />
       <Route path="register" component={RegisterPage} />
       <Route path="about" getComponent={getContextComponent} />
       <Route path="privacy" getComponent={getContextComponent} />

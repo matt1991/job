@@ -112,6 +112,6 @@
     "build": "babel-node tools/run build",
     "deploy": "babel-node tools/run deploy",
     "start": "node server.js"
-    "startRelease": "babel-node tools/run start --release"
+    "restart": "babel-node tools/run start --release"
   }
 }

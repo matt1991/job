@@ -13,7 +13,11 @@ import s from './JobDetail.scss';
 import cx from 'classnames';
 
 
+
 import JobItem from '../JobList/JobItem';
+
+import fetch from './../../core/fetch';
+
 
 
 
@@ -25,30 +29,22 @@ class JobDetail extends Component {
     onSetTitle: PropTypes.func.isRequired,
   };
 
-  // getInitialState() {
-  //   return {
-  //     jobList:null
-  //   };
-  // };
 
   componentWillMount() {
-    // $.get(this.props.source, function (result) {
-    //   this.setState({
-    //     jobList: result.jobList
-    //   });
-    // });
-
-    this.state = {
-      job :{name: "PHP Programmer", place: "Central", company:"Amazon",salary:"$5000", type:"part-time", 
-      conpanywebsite:"http://www.amazon.com", description:"We have an immediate opening for an experienced iOS application developer. This is a direct-hire onsite position. 3rd party agencies, staffing companies, and corp-to-corp candidates will not be considered. U.S. Citizens and those authorized to work in the U.S. are encouraged to apply. We are unable to sponsor at this time.",
-      requirement:""
-    }
-    };
-
+    let { jobId } = this.props.params
     
+
+   fetch(`http://47.89.55.214:8080/api/job/view?jobId={jobId}`).then(response => response.json())
+     .then(data => this.setState({jobList: data.docs})).catch(e =>console.log(e));
+
     // this.state = {
-    //   job :{name: "job1", place: "central", company:"Amazon",salary:"$5000", type:"part-time"}
+    //   job :{name: "PHP Programmer", place: "Central", company:"Amazon",salary:"$5000", type:"part-time", 
+    //   conpanywebsite:"http://www.amazon.com", description:``,
+    //   requirement:""
+    // }
     // };
+
+  
   }
 
   render() {
@@ -59,7 +55,7 @@ class JobDetail extends Component {
             <a href={this.state.job.conpanywebsite}>{this.state.job.conpanywebsite}</a> 
             <h2 className="divider"></h2>
             <h2 > {this.state.job.name}</h2>
-            <p>{this.state.job.description}</p>         
+            <div dangerouslySetInnerHTML={{__html: this.state.job.description}}></div>
         </div>
       </div>
     );
