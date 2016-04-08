@@ -34,15 +34,15 @@ class JobDetail extends Component {
     let { jobId } = this.props.params
     
 
-   fetch(`http://47.89.55.214:8080/api/job/view?jobId={jobId}`).then(response => response.json())
-     .then(data => this.setState({jobList: data.docs})).catch(e =>console.log(e));
+   // fetch(`http://47.89.55.214:8080/api/job/view?jobId={jobId}`).then(response => response.json())
+   //   .then(data => this.setState({jobList: data.docs})).catch(e =>console.log(e));
 
-    // this.state = {
-    //   job :{name: "PHP Programmer", place: "Central", company:"Amazon",salary:"$5000", type:"part-time", 
-    //   conpanywebsite:"http://www.amazon.com", description:``,
-    //   requirement:""
-    // }
-    // };
+    this.state = {
+      job :{name: "PHP Programmer", place: "Central", company:"Amazon",salary:"$5000", type:"part-time", 
+      conpanywebsite:"http://www.amazon.com", description:``,
+      requirement:""
+    }
+    };
 
   
   }

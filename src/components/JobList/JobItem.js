@@ -28,7 +28,7 @@ class JobItem extends Component {
 
   render() {
     return (
-      <Link className="list-group-item" to={pathname:"/job/detail", query:{this.state.job._id}}>
+      <Link className="list-group-item" to={`/job/detail/${this.state.job._id}`}>
         <div className="row">
           <div className={cx("col-xs-3", s.jobtitle)}>
             <strong>{this.state.job.Position}</strong><br/>
