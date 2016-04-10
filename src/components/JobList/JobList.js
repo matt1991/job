@@ -25,21 +25,46 @@ class JobList extends Component {
     onSetTitle: PropTypes.func.isRequired,
   };
 
-  // getInitialState() {
-  //   return {
-  //     jobList:null
-  //   };
-  // };
+  constructor(props) {
+    super();
+    this.state = {
+      jobList:[{
+        "_id":"",
+        "Position":"",
+        "CompanyId":"",
+        "SalaryMin":"",
+        "SalaryMax":"",
+        "IsNegotiable":true,
+        "Requirement":"",
+        "Description":"",
+        "Category":"",
+        "Email":"",
+        "Phone":"",
+        "WeChat":"",
+        "Status":"",
+        "ContactName":"",
+        "__v":0,
+        "ModifiedTime":"",
+        "CreatedTime":"",
+        "IsExpired":false,
+        "IsDeleted":false,
+        "IsPublished":true,
+        "JobSeekers":[],
+        "Welfares":{"Medical":false,"DoublePay":false,"MPF":false,"Weekends":false},
+        "Company":{"Name":"","Location":"","Description":""}
+      }]
+    };
+  }
+  componentWillMount() {
+    fetch(`http://192.168.8.6:8080/api/job/list?curPage=1&pageSize=100`).then(response => response.json())
+    .then(data => this.setState({jobList: data.docs})).catch(e =>console.log(e));
 
-  componentDidMount() {
-    // fetch(`http://47.89.55.214:8080/api/job/list?curPage=1&pageSize=100`).then(response => response.json())
-    // .then(data => this.setState({jobList: data.docs})).catch(e =>console.log(e));
+    console.log("***********");
+    console.log(this.state);
+    console.log("%%%%%%%%%%%%");
+    console.log(this.state.jobList);
+    console.log("&&&&&&&&&&&");
 
-    let data = {"docs":[{"_id":6,"PostedBy":1,"Position":"123","CompanyId":null,"SalaryMin":0,"SalaryMax":0,"IsNegotiable":true,"Requirement":"<p>123123<br/></p>","Description":"123","Category":"unknown","Email":"123@123","Phone":"123","WeChat":null,"Status":"PUBLISHED","ContactName":"123","__v":0,"ModifiedTime":"2016-03-21T08:47:35.832Z","CreatedTime":"2016-03-21T08:47:35.832Z","IsExpired":false,"IsDeleted":false,"IsPublished":true,"JobSeekers":[],"Welfares":{"Medical":false,"DoublePay":false,"MPF":false,"Weekends":false},"Company":{"Name":"123","Description":"123"}}],"total":1,"limit":10,"page":1,"pages":1};
-
-    this.setState({
-      jobList: data.docs
-    });
 
 
     // const response = await fetch(`http://47.89.55.214:8080/api/job/list?curPage=1&pageSize=100`);
@@ -76,7 +101,7 @@ class JobList extends Component {
         <div className={s.container}>
             <div className="col-sm-8">
               <div className={cx(s.list, "list-group")}>
-                {this.state.jobList.map(item=><JobItem job={item} key={item.id}/>)}
+                {this.state.jobList.map(item=><JobItem job={item} key={item._id}/>)}
               </div>
             </div>
           

@@ -30,20 +30,20 @@ class Header extends Component {
     console.log("onSearchButtonPressed");
   }
 
+  // <Navigation className={s.nav}  onSearchButtonPressed={::this.onSearchButtonPressed}/>
+          // <div className>
+        //   <input type="text" className={this.state.search?s.searchshow:s.searchhide} placeholder="Search"></input>
+        // </div>
+
   render() {
     return (
       <div className={s.root}>
         <div className={s.container}>
-          <Navigation className={s.nav}  onSearchButtonPressed={::this.onSearchButtonPressed}/>
-
-          <IndexLink className={s.brand} to="/">
-            <img src={require('./logo-small.png')} width="38" height="38" alt="React" />
+          <IndexLink className={s.brand} to={`/job/list`}>
             <span className={s.brandTxt}>帮帮推</span>
           </IndexLink>
         </div>
-        <div className>
-          <input type="text" className={this.state.search?s.searchshow:s.searchhide} placeholder="Search"></input>
-        </div>
+
       </div>
     );
   }

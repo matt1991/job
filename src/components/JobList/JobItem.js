@@ -22,7 +22,21 @@ class JobItem extends Component {
   constructor(props) {
     super();
     this.state = {
-      job:props.job
+      job:{
+          _id: props.job._id,
+          name: props.job.Name,
+          company:{
+            name:props.job.Company.Name,
+            description:props.job.Company.Description,
+            location:props.job.Company.Location
+          },
+          position:props.job.Position,
+          requirement:props.job.Requirement,
+          contactName:props.job.ContactName,
+          email:props.job.Email,
+          phone:props.job.Phone,
+          salaryMax:props.job.SalaryMax
+      }
     };
   }
 
@@ -31,16 +45,15 @@ class JobItem extends Component {
       <Link className="list-group-item" to={`/job/detail/${this.state.job._id}`}>
         <div className="row">
           <div className={cx("col-xs-3", s.jobtitle)}>
-            <strong>{this.state.job.Position}</strong><br/>
-            {
-              this.state.job.company?this.state.job.company.Name:"company name null"}
+            <strong>{this.state.job.position}</strong><br/>
+            {this.state.job.company?this.state.job.company.name:"company name null"}
           </div>
           <div className={cx("col-xs-6 text-center", s.joblocation)}>
-            <i className={cx("glyphicon glyphicon-home", s.homeicon)}></i><strong>{this.state.job.company?this.state.job.company.place:"place null"}</strong>
+            <i className={cx("glyphicon glyphicon-home", s.homeicon)}></i><strong>{this.state.job.company?this.state.job.company.location:"place null"}</strong>
           </div>
           <div className={cx("col-xs-3", "text-center", )}>
-            <p ><strong>{this.state.job.SalaryMax}</strong></p>
-            <p className={cx("badge",s.fulltime)}>{this.state.job.type}</p>
+            <p ><strong>{this.state.job.salaryMax==0?"面谈":this.state.job.salaryMax}</strong></p>
+            <p className={cx("badge",s.fulltime)}>{}</p>
           </div>
         </div>
       </Link>

@@ -30,14 +30,6 @@ async function getContextComponent(location, callback) {
 
 export default (
   <Route>
-    <Route path="/" component={App}>
-      <IndexRoute getComponent={getContextComponent} />
-      <Route path="contact" component={ContactPage} />
-      <Route path="login" component={LoginPage} />
-      <Route path="register" component={RegisterPage} />
-      <Route path="about" getComponent={getContextComponent} />
-      <Route path="privacy" getComponent={getContextComponent} />
-    </Route>
     <Route path="/job" component={App}>
       <IndexRoute getComponent={getContextComponent} />
       <Route path="list" component={JobList} />
